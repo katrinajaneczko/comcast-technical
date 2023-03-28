@@ -1,19 +1,25 @@
-name: test
+name: Testing
 
 on: [push]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: 3.9
+        
     - name: Install dependencies
       run: |
-        ./install
+        ./install.sh
+    
     - name: Run tests
-      run: python -m unittest discover
+      run: |
+        source venv/bin/activate
+        python -m unittest discover
