@@ -26,10 +26,10 @@ def stringinate():
 
 def handleStats(seen_strings):
     print('\nStats:\n %s\n' % seen_strings)
-    mostPopularString(seen_strings)
-    longestString(seen_strings) 
+    mostPopularString(seen_strings, quit_status=False)
+    longestString(seen_strings, quit_status=False) 
             
-def mostPopularString(seen_strings):
+def mostPopularString(seen_strings, quit_status):
     # find max of all string counts
     maxCount = max(seen_strings.values())
     
@@ -40,7 +40,7 @@ def mostPopularString(seen_strings):
             print(string, ' ', end='')
     print('\n')
     
-def longestString(seen_strings):
+def longestString(seen_strings, quit_status):
     # find max length
     maxLength = 0
     for string in seen_strings.keys():
@@ -102,7 +102,9 @@ def outputEndStats(seen_strings):
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     with open("stats.txt", "a") as f:
         f.write(f"Timestamp: {timestamp}\n")
-        f.write(f"Stats: {seen_strings}\n\n")
+        f.write(f"Stats: {seen_strings}\n")
+        
+        
     
     
     
