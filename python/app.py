@@ -85,6 +85,8 @@ def mostFrequentChar(inputResult):
             print(char, ' ', end='')
     print('\nFrequency = %d\n' % maxCount)
     
+    return maxCount
+    
 
 
 def handleInputString(inputResult):
