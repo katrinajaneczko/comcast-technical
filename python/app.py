@@ -26,20 +26,26 @@ def stringinate():
 def mostFrequentChar(inputResult):
     charCounts = {}
     
+    # store punctuation in a string
+    punctuation = string.punctuation
+    
     # build dictionary with chars as keys and counts as values
     for char in inputResult:
-        if char in charCounts:
-            charCounts[char] += 1
-        else:
-            charCounts[char] = 1
+        # ignore punctuation
+        if char not in punctuation and char != ' ':
+            if char in charCounts:
+                charCounts[char] += 1
+            else:
+                charCounts[char] = 1
             
     # find max of all counts
     maxCount = max(charCounts.values())
     
-    # find associated char
+    # find associated char(s)
+    print('The most frequent character(s) is/are:')
     for char, count in charCounts.items(): 
         if count == maxCount:
-            print(char)
+            print(char, ' ')
     print('Frequency = %d\n' % maxCount)
     
 
@@ -50,7 +56,6 @@ def handleInputString(inputResult):
 
     mostFrequentChar(inputResult)
     
-
     if inputResult in seen_strings:
         seen_strings[inputResult] += 1
     else:
