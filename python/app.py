@@ -18,6 +18,7 @@ def stringinate():
         elif (inputResult.lower() == "stats"):
             print('\nStats:\n %s\n' % seen_strings)
             mostPopularString(seen_strings)
+            longestString(seen_strings)
             
         # Handle an input string
         else:
@@ -33,6 +34,25 @@ def mostPopularString(seen_strings):
         if count == maxCount:
             print(string, ' ', end='')
     print('\n')
+    
+def longestString(seen_strings):
+    # find max length
+    maxLength = 0
+    for string in seen_strings.keys():
+        if len(string) > maxLength:
+            maxLength = len(string)
+    
+    # find longest string(s)
+    longest = [] # account for multiple strings to be of max length
+    for string in seen_strings.keys():
+        if len(string) == maxLength:
+            longest.append(string)
+            
+    print("Longest input received: ", end='')
+    for string in longest:
+        print(string)
+        
+        
 
 def mostFrequentChar(inputResult):
     charCounts = {}
