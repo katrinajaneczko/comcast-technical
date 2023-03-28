@@ -32,9 +32,10 @@ def handleStats(seen_strings):
 def mostPopularString(seen_strings):
     # find max of all string counts
     maxCount = max(seen_strings.values())
+    print(maxCount)
     
     # find associated string(s)
-    print('Most popular strings(s): ', end='')
+    print('Most popular string(s): ', end='')
     for string, count in seen_strings.items(): 
         if count == maxCount:
             print(string, ' ', end='')
