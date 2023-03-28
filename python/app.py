@@ -17,11 +17,22 @@ def stringinate():
         # Handle "stats" input
         elif (inputResult.lower() == "stats"):
             print('\nStats:\n %s\n' % seen_strings)
-
+            mostPopularString(seen_strings)
+            
         # Handle an input string
         else:
             handleInputString(inputResult)
 
+def mostPopularString(seen_strings):
+    # find max of all string counts
+    maxCount = max(seen_strings.values())
+    
+    # find associated string(s)
+    print('Most popular strings(s): ', end='')
+    for string, count in seen_strings.items(): 
+        if count == maxCount:
+            print(string, ' ', end='')
+    print('\n')
 
 def mostFrequentChar(inputResult):
     charCounts = {}
@@ -42,11 +53,11 @@ def mostFrequentChar(inputResult):
     maxCount = max(charCounts.values())
     
     # find associated char(s)
-    print('The most frequent character(s) is/are:')
+    print('Most frequent character(s): ', end='')
     for char, count in charCounts.items(): 
         if count == maxCount:
-            print(char, ' ')
-    print('Frequency = %d\n' % maxCount)
+            print(char, ' ', end='')
+    print('\nFrequency = %d\n' % maxCount)
     
 
 
@@ -56,6 +67,7 @@ def handleInputString(inputResult):
 
     mostFrequentChar(inputResult)
     
+    # add input string to seen_strings dict and increment count
     if inputResult in seen_strings:
         seen_strings[inputResult] += 1
     else:

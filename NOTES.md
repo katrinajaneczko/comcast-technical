@@ -5,3 +5,5 @@ Please make notes here to clarify any decisions taken that you wish to communica
 * I used https://www.geeksforgeeks.org/python-accessing-key-value-in-dictionary/ to remind me of Python dictionary syntax and how to iterate over them (for finding the most frequent character and count)
 * I realized a string like "hheelloo" has a highest char frequency of 2, and 'h', 'e', 'l', and 'o' should be printed, so I amended my code.
 * Ignored punctuation by storing it in a string and checking that each char wasn't in the string. Looked at https://www.digitalocean.com/community/tutorials/python-string-module and saw this.
+* Used same logic for finding most frequent character(s) in a dictionary to find most popular word(s)
+
