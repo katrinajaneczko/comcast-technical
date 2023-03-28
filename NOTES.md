@@ -10,6 +10,6 @@ Please make notes here to clarify any decisions taken that you wish to communica
 * I decided to try storing whatever the stats are for a run of the application at the end of the session in a separate textfile with timestamps.
 * To remember how to output to a file in Python, I referenced https://docs.python.org/3/tutorial/inputoutput.html
 * I would have to redo a handful of what I wrote in order to output to a file instead so I am deciding to scrap it for the sake of time. However I will print out to the file the list of inputted strings with a timestamp since that functionality is already complete.
-
-
+* Instead I decided to show one unit test (it could benefit from many more but for the sake of time I just showed one). I referenced https://docs.python.org/3/library/unittest.html
+* Since my biggest CI/CD experience is with GitHub Actions, I included an example of my using that. It's in testing.yml.
 
