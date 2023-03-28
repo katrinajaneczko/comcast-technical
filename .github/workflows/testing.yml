@@ -17,6 +17,7 @@ jobs:
         
     - name: Install dependencies
       run: |
+        cd python
         ./install.sh
     
     - name: Run tests
