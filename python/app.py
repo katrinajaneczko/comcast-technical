@@ -1,4 +1,5 @@
 import string
+import datetime
 
 seen_strings = {}
 
@@ -11,19 +12,23 @@ def stringinate():
 
         # Handle "quit" input
         if (inputResult.lower() == "quit"):
+            outputEndStats(seen_strings)
             print('Exiting...\n')
             break
 
         # Handle "stats" input
         elif (inputResult.lower() == "stats"):
-            print('\nStats:\n %s\n' % seen_strings)
-            mostPopularString(seen_strings)
-            longestString(seen_strings)
+            handleStats(seen_strings)
             
         # Handle an input string
         else:
             handleInputString(inputResult)
 
+def handleStats(seen_strings):
+    print('\nStats:\n %s\n' % seen_strings)
+    mostPopularString(seen_strings)
+    longestString(seen_strings) 
+            
 def mostPopularString(seen_strings):
     # find max of all string counts
     maxCount = max(seen_strings.values())
@@ -93,6 +98,10 @@ def handleInputString(inputResult):
     else:
         seen_strings[inputResult] = 1
 
-
+def outputEndStats(seen_strings):
+    pass
+    
+    
+    
 if __name__ == '__main__':
     stringinate()
