@@ -7,5 +7,5 @@ Please make notes here to clarify any decisions taken that you wish to communica
 * Ignored punctuation by storing it in a string and checking that each char wasn't in the string. Looked at https://www.digitalocean.com/community/tutorials/python-string-module and saw this.
 * Used same logic for finding most frequent character(s) in a dictionary to find most popular word(s)
 * For the longest string(s) feature, I am not prioritizing it now, but I realize that if a user enters a string with weird spacing or newlines or end with punctuation, then the way it's printed to the terminal may look off and you may not be able to tell if it's just one string or multiple and where one string ends and another starts.
-
+* I decided to try storing whatever the stats are for a run of the application at the end of the session in a separate textfile with timestamps.
 

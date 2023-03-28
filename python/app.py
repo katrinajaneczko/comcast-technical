@@ -99,7 +99,10 @@ def handleInputString(inputResult):
         seen_strings[inputResult] = 1
 
 def outputEndStats(seen_strings):
-    pass
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    with open("stats.txt", "a") as f:
+        f.write(f"Timestamp: {timestamp}\n")
+        f.write(f"Stats: {seen_strings}\n\n")
     
     
     
