@@ -1,3 +1,4 @@
+import string
 
 seen_strings = {}
 
@@ -21,17 +22,40 @@ def stringinate():
         else:
             handleInputString(inputResult)
 
+
+def mostFrequentChar(inputResult):
+    charCounts = {}
+    
+    # build dictionary with chars as keys and counts as values
+    for char in inputResult:
+        if char in charCounts:
+            charCounts[char] += 1
+        else:
+            charCounts[char] = 1
+            
+    # find max of all counts
+    maxCount = max(charCounts.values())
+    
+    # find associated char
+    for char, count in charCounts.items(): 
+        if count == maxCount:
+            print(char)
+    print('Frequency = %d\n' % maxCount)
+    
+
+
 def handleInputString(inputResult):
     print('\nInput = %s' % inputResult)
-    print('Length = %s \n' % len(inputResult))
+    print('Length = %s' % len(inputResult))
+
+    mostFrequentChar(inputResult)
+    
 
     if inputResult in seen_strings:
         seen_strings[inputResult] += 1
     else:
         seen_strings[inputResult] = 1
-        
+
+
 if __name__ == '__main__':
     stringinate()
-
-
-
