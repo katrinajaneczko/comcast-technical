@@ -8,4 +8,8 @@ Please make notes here to clarify any decisions taken that you wish to communica
 * Used same logic for finding most frequent character(s) in a dictionary to find most popular word(s)
 * For the longest string(s) feature, I am not prioritizing it now, but I realize that if a user enters a string with weird spacing or newlines or end with punctuation, then the way it's printed to the terminal may look off and you may not be able to tell if it's just one string or multiple and where one string ends and another starts.
 * I decided to try storing whatever the stats are for a run of the application at the end of the session in a separate textfile with timestamps.
+* To remember how to output to a file in Python, I referenced https://docs.python.org/3/tutorial/inputoutput.html
+* I would have to redo a handful of what I wrote in order to output to a file instead so I am deciding to scrap it for the sake of time. However I will print out to the file the list of inputted strings with a timestamp since that functionality is already complete.
+
+
 

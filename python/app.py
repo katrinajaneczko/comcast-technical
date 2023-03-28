@@ -26,10 +26,10 @@ def stringinate():
 
 def handleStats(seen_strings):
     print('\nStats:\n %s\n' % seen_strings)
-    mostPopularString(seen_strings, quit_status=False)
-    longestString(seen_strings, quit_status=False) 
+    mostPopularString(seen_strings)
+    longestString(seen_strings) 
             
-def mostPopularString(seen_strings, quit_status):
+def mostPopularString(seen_strings):
     # find max of all string counts
     maxCount = max(seen_strings.values())
     
@@ -40,7 +40,7 @@ def mostPopularString(seen_strings, quit_status):
             print(string, ' ', end='')
     print('\n')
     
-def longestString(seen_strings, quit_status):
+def longestString(seen_strings):
     # find max length
     maxLength = 0
     for string in seen_strings.keys():
